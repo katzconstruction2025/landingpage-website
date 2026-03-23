@@ -11,6 +11,12 @@
       font-weight: 500;
       font-style: normal;
     }
+	@font-face {
+      font-family: 'Gotham_Light';
+      src: url('fonts/Gotham_Light.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -41,6 +47,9 @@
       min-height: 100vh;
       padding: 52px 40px 48px;
       letter-spacing: 0.08em;
+      opacity: 0;
+      animation: fadeIn 1.4s ease forwards;
+      animation-delay: 0.2s;
     }
 
     @keyframes fadeIn {
@@ -108,11 +117,12 @@
     .contact-items {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 30px;
     }
 
     .contact-item {
-      font-size: 15px;
+	font-family: 'Gotham_Light', sans-serif;
+      font-size: 18px;
       letter-spacing: 0.12em;
       color: var(--text-dim);
       text-decoration: none;
@@ -141,7 +151,7 @@
     <p class="contact-label">Contact:</p>
     <div class="contact-items">
       <a class="contact-item" href="tel:3107793055">310 779 3055</a>
-      <a class="contact-item" href="mailto:office&#64;katzconstruction.com">office&#64;katzconstruction.com</a>
+      <a class="contact-item" href="mailto:office@katzconstruction.com">office@katzconstruction.com</a>
     </div>
   </div>
 
