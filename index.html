@@ -4,10 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Katz Construction Inc.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Gotham';
+      src: url('fonts/Gotham_Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -15,10 +18,9 @@
     }
 
     :root {
-      --bg: #1e2d35;
-      --text: #e8e4dc;
+      --bg: #242f38;
+      --text: #ffffff;
       --text-dim: rgba(232, 228, 220, 0.55);
-      --accent: rgba(232, 228, 220, 0.12);
     }
 
     html, body {
@@ -29,18 +31,16 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 200;
+      font-family: 'Gotham', sans-serif;
+      font-weight: 400;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 150px;
       min-height: 100vh;
       padding: 52px 40px 48px;
       letter-spacing: 0.08em;
-      opacity: 0;
-      animation: fadeIn 1.4s ease forwards;
-      animation-delay: 0.2s;
     }
 
     @keyframes fadeIn {
@@ -49,10 +49,6 @@
 
     /* LOGO AREA */
     .logo-area {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0px;
       animation: slideDown 1s ease forwards;
       animation-delay: 0.4s;
       opacity: 0;
@@ -63,52 +59,15 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .logo-placeholder {
-      width: 72px;
-      height: 72px;
-      border: 1px solid var(--text-dim);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      opacity: 0.5;
-    }
-
-    .logo-placeholder span {
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      font-weight: 300;
-    }
-
-    .logo-text {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 0 10px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: clamp(10px, 1.4vw, 13px);
-      letter-spacing: 0.28em;
-      line-height: 1.8;
-      text-transform: uppercase;
-    }
-
-    .logo-text .initial {
-      color: var(--text);
-    }
-
-    .logo-text .word {
-      color: var(--text);
+    .logo-img {
+      width: 320px;
+      height: auto;
+      display: block;
     }
 
     /* CENTER */
     .center {
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
       animation: fadeUp 1.2s ease forwards;
       animation-delay: 0.7s;
       opacity: 0;
@@ -120,12 +79,13 @@
     }
 
     .coming-soon {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(28px, 5.5vw, 52px);
+      font-family: 'Gotham', sans-serif;
+      font-weight: 400;
+      font-size: clamp(18px, 5vw, 31px);
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text);
+      white-space: nowrap;
     }
 
     /* CONTACT */
@@ -137,76 +97,40 @@
     }
 
     .contact-label {
-      font-size: clamp(9px, 1.1vw, 11px);
+      font-size: 18px;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       font-weight: 400;
       color: var(--text);
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     .contact-items {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 40px;
     }
 
     .contact-item {
-      font-size: clamp(12px, 1.5vw, 15px);
+      font-size: 15px;
       letter-spacing: 0.12em;
       color: var(--text-dim);
       text-decoration: none;
       transition: color 0.3s ease;
-      font-weight: 200;
+      font-weight: 400;
+      pointer-events: auto;
+      cursor: pointer;
     }
 
     .contact-item:hover {
       color: var(--text);
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      body {
-        padding: 44px 28px 40px;
-        gap: 0;
-        justify-content: space-between;
-      }
-
-      .logo-placeholder {
-        width: 56px;
-        height: 56px;
-      }
-
-      .logo-text {
-        font-size: 11px;
-        letter-spacing: 0.22em;
-      }
-
-      .coming-soon {
-        font-size: clamp(24px, 8vw, 36px);
-        letter-spacing: 0.18em;
-      }
-
-      .contact-label {
-        font-size: 10px;
-      }
-
-      .contact-item {
-        font-size: 13px;
-      }
     }
   </style>
 </head>
 <body>
 
   <div class="logo-area">
-    <div class="logo-placeholder">
-      <span>Logo</span>
-    </div>
-    <div class="logo-text">
-      <span class="initial">K A</span><span class="word">CONSTRUCTION</span>
-      <span class="initial">T Z</span><span class="word">INC.</span>
-    </div>
+    <img class="logo-img" src="images/logo.png" alt="Katz Construction Inc." />
   </div>
 
   <div class="center">
@@ -217,7 +141,7 @@
     <p class="contact-label">Contact:</p>
     <div class="contact-items">
       <a class="contact-item" href="tel:3107793055">310 779 3055</a>
-      <a class="contact-item" href="mailto:office@katzconstruction.com">office@katzconstruction.com</a>
+      <a class="contact-item" href="mailto:office&#64;katzconstruction.com">office&#64;katzconstruction.com</a>
     </div>
   </div>
 
